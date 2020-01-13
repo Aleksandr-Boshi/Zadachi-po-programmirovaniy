@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+int k, i, m, n, y;
+
+void factorization(int n) {
+
+	if (n < 2) {
+		cout << n;
+	}
+
+	while (n >= 2) {
+		k = (int)sqrt((double)n) + 1;
+		i = 2;
+		while (n % i && i <= k) i++;
+		if (i > k) m = n;
+		else m = i;
+		printf("%d", m);
+		n /= m;
+		if (n > 1) printf("*");
+	}
+	printf("\n");
+
+
+}
+
+int main()
+{
+	setlocale(LC_ALL, "RUSSIAN");
+
+	cout << "Введите число для факторизации: " << endl;
+	cin >> n;
+
+	factorization(n);
+
+	return 0;
+}
