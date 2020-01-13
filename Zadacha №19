@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int a;
+	cin >> a;
+
+	int* array = new int[a];
+
+	for (int i = 0; i < a; i++){
+		cin >> array[i];
+	}
+
+	for (int i = 0, l = 0, c = 0, k = 0; i < 9 * a; l++, i++){
+
+		if (array[l] == k) {
+			c++;
+		}
+
+		if (l == a - 1) {
+			if (c > 0) { cout << k << ":" << c << endl; }
+			c = 0;
+			k++;
+			l = -1;
+		}
+	}
+
+	delete[] array;
+}
