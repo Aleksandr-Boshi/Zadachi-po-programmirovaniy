@@ -12,17 +12,17 @@ int main()
 		cin >> array[i];
 	}
 
-	for (int i = 0, l = 0, c = 0, k = 0; i < 9 * a; l++, i++){
+	for (int i = 0, b = 0, c = 0, d = 0; i < 9 * a; b++, i++){
 
-		if (array[l] == k) {
+		if (array[b] == d) {
 			c++;
 		}
 
-		if (l == a - 1) {
-			if (c > 0) { cout << k << ":" << c << endl; }
+		if (b == a - 1) {
+			if (c > 0) { cout << d << ":" << c << endl; }
 			c = 0;
-			k++;
-			l = -1;
+			d++;
+			b = -1;
 		}
 	}
 
