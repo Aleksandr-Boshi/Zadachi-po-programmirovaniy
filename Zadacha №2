@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocal(0, "");
+	int a, b, n;
+
+		cout << "Введите первое число: ";
+		cin >> a;
+		cout << "Введите второе число: ";
+		cin >> b;
+
+	a = n;
+	a = b;
+	b = a;
+
+		cout << a << endl;
+		cout << b << endl;
+
+	return 0;
+}
