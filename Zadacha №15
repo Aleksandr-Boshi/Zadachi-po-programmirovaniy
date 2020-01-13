@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RUSSIAN");
+
+	int inp = 0;
+	int size;
+	int tmp;
+	int arr_int[6];
+	int i = 0;
+	int input_str = 0;
+
+	cout << "Введите размер массива: ";
+	cin >> input_str;
+	cout << "Введите массив, например: (1 2 3 4 5 6 7) : " << endl;
+	size = input_str;
+
+	for (int i = 0; i < 6; i++) {
+		arr_int[i] = INT_MAX;
+	}
+
+	for (int i = 0; i < size; i++) {
+		int new_input = input_str;
+		if (new_input <= -1000000 or new_input >= 1000000) {
+			cout << ("Введено недопустимое значения [-1 000 000, 1 000 000]");
+			i--;
+			continue;
+		}
+		for (int k = 5; k >= 1; k--) {
+			if (new_input < arr_int[k]) {
+				if (arr_int[k] != INT_MAX) {
+					for (int v = k - 1; v >= 0; v--) {
+						tmp = arr_int[v];
+						arr_int[v] = arr_int[k];
+						arr_int[k] = tmp;
+					}
+				}
+				arr_int[k] = new_input;
+				break;
+			}
+		}
+		for (int k = 1; k < 6; k++) { if (arr_int[k] != INT_MAX) { cout << arr_int[k] << "\t"; } }
+		cout << endl;
+		cin >> input_str;
+	}
+
+	return 0;
+}
